@@ -4,6 +4,8 @@
   background-color: transparent;
   width: 32px;
   height: 32px;
+  -webkit-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
   transition: opacity .2s linear;
   border: none;
   position: absolute;
@@ -14,4 +16,13 @@
 .popup__close:hover {
   opacity: 0.6;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__close {
+    width: 20px;
+    height: 20px;
+    right: 0px;
+		top: -36px;
+  }
 }

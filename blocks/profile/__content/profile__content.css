@@ -1,19 +1,13 @@
-.profile {
+.profile__content{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 880px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 36.25px auto 0;
 }
-
 @media screen and (max-width: 768px) {
-  .profile {
+  .profile__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
