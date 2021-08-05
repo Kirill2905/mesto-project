@@ -2,7 +2,7 @@
   width: 24px;
   height: 24px;
   margin-left: 18px;
-  background: url(/images/Pen.svg) no-repeat center #000000;
+  background: url(images/Pen.svg) no-repeat center #000000;
   border: 1px solid #FFFFFF;
   -webkit-transition: opacity .2s linear;
   -o-transition: opacity .2s linear;
