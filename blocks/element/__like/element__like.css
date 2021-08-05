@@ -3,7 +3,7 @@
   border: none;
   width: 22px;
   height: 19px;
-  background: url('../../../images/like.svg');
+  background-image: url('../../../images/like.svg');
   -webkit-transition: opacity .2s linear;
   -o-transition: opacity .2s linear;
   transition: opacity .2s linear;
