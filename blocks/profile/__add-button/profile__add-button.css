@@ -1,7 +1,10 @@
 .profile__add-button{
-  background-color: #000;
-  background-size: cover;
-  object-fit: contain;
+  background-image: url('../../../images/Plus.svg');
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center;
+  background-size: 22px 22px;
+  object-fit: cover;
   width: 150px;
   height: 50px;
   border: 2px solid #FFFFFF;
@@ -26,6 +29,6 @@
 @media screen and (max-width: 768px){
   .profile__add-button{
       width: 282px;
-
+      background-size: 16px 16px;
   }
 }

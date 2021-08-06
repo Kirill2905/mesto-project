@@ -17,5 +17,6 @@
     margin: 30px 0 34px;
     -ms-grid-columns: 1fr auto 1fr;
     grid-template-columns: 1fr auto 1fr;
+    row-gap: 8px;
   }
 }
