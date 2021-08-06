@@ -1,80 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pages/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
     <title>Mesto</title>
-</head>
-<body class="body">
+  </head>
+  <body class="body">
     <header class="header">
-        <img class="logo" src="images/logo.svg" alt="Логотип">
+      <img class="logo" src="images/logo.svg" alt="Логотип" />
     </header>
     <main>
       <section class="profile">
         <div class="profile__content">
-          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
+          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар" />
           <div class="profile__info">
-              <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" type="button"></button>
-              <p class="profile__hobby">Исследователь океана</p>
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+            <p class="profile__hobby">Исследователь океана</p>
           </div>
         </div>
         <button class="profile__add-button" type="button">
-          <img src="images/Plus.svg" alt="Добавить">
+          <img src="images/Plus.svg" alt="Добавить" />
         </button>
       </section>
       <section class="elements">
         <div class="element">
-          <img src="images/karachaevsk.jpg" class="element__image" alt="Фото Карачаевска">
+          <img
+            src="images/karachaevsk.jpg"
+            class="element__image"
+            alt="Фото Карачаевска"
+          />
           <div class="element__content">
             <h2 class="element__place">Карачаевск</h2>
-            <button class="element__like">
-            </button>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
         <div class="element">
-          <img src="images/elbrus.jpg" class="element__image" alt="Фото горы Эльбрус">
+          <img
+            src="images/elbrus.jpg"
+            class="element__image"
+            alt="Фото горы Эльбрус"
+          />
           <div class="element__content">
             <h2 class="element__place">Гора Эльбрус</h2>
-            <button class="element__like">
-            </button>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
         <div class="element">
-          <img src="images/dombay.png" class="element__image" alt="Фото Домбая">
+          <img
+            src="images/dombay.png"
+            class="element__image"
+            alt="Фото Домбая"
+          />
           <div class="element__content">
             <h2 class="element__place">Домбай</h2>
-            <button class="element__like">
-            </button>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
         <div class="element">
-          <img src="images/elbrus.jpg" class="element__image" alt="Фото горы Эльбрус">
+          <img
+            src="images/elbrus.jpg"
+            class="element__image"
+            alt="Фото горы Эльбрус"
+          />
           <div class="element__content">
             <h2 class="element__place">Гора Эльбрус</h2>
-            <button class="element__like">
-            </button>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
         <div class="element">
-          <img src="images/dombay.png" class="element__image" alt="Фото Домбая">
+          <img
+            src="images/dombay.png"
+            class="element__image"
+            alt="Фото Домбая"
+          />
           <div class="element__content">
             <h2 class="element__place">Домбай</h2>
-            <button class="element__like">
-            </button>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
         <div class="element">
-          <img src="images/karachaevsk.jpg" class="element__image" alt="Фото Карачаевска">
+          <img
+            src="images/karachaevsk.jpg"
+            class="element__image"
+            alt="Фото Карачаевска"
+          />
           <div class="element__content">
             <h2 class="element__place">Карачаево-Черкессия</h2>
-            <button class="element__like">
-            </button>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
-    </section>
+      </section>
     </main>
     <footer class="footer">
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
@@ -82,13 +100,13 @@
     <div class="popup">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form>
-        <input class="popup__input" type="text" placeholder="Жак-Ив Кусто">
-        <input class="popup__input" type="text" placeholder="Исследователь океана">
-        <button class="popup__submit" type="submit">Сохранить</button>
-      </form>
-      <button type="button" class="popup__close"></button>
+        <form name="edit-profile">
+          <input class="popup__input" type="text" placeholder="Жак-Ив Кусто" name="name"/>
+          <input class="popup__input" type="text" placeholder="Исследователь океана" name="hobby"/>
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+        <button type="button" class="popup__close"></button>
+      </div>
     </div>
-    </div>
-</body>
+  </body>
 </html>

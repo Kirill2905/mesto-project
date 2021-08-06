@@ -1,5 +1,7 @@
 .profile__add-button{
   background-color: #000;
+  background-size: cover;
+  object-fit: contain;
   width: 150px;
   height: 50px;
   border: 2px solid #FFFFFF;
@@ -24,5 +26,6 @@
 @media screen and (max-width: 768px){
   .profile__add-button{
       width: 282px;
+
   }
 }
