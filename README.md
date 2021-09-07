@@ -18,4 +18,4 @@
 
 **GitPages**
 
-* [Сcылка на GitPages](https://kirill2905.github.io/mesto/).
+* [Сcылка на GitPages](https://kirill2905.github.io/mesto-project/).
