@@ -15,10 +15,10 @@
       <section class="profile">
         <div class="profile__content">
           <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар" />
-            <div class="profile__info">
-              <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" type="button"></button>
-              <p class="profile__hobby">Исследователь океана</p>
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+            <p class="profile__hobby">Исследователь океана</p>
           </div>
         </div>
         <button class="profile__add-button" type="button"></button>
@@ -26,13 +26,13 @@
       <section class="elements">
         <template id="card">
           <div class="element">
-            <img class="element__image"/>
-
+            <img class="element__image" />
             <div class="element__content">
               <h2 class="element__place"></h2>
               <button type="button" class="element__like"></button>
             </div>
-          <button type="button" class="element__delete"></button></div>
+            <button type="button" class="element__delete"></button>
+          </div>
         </template>
       </section>
     </main>
@@ -43,8 +43,8 @@
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form name="edit-profile" id="edit_profile">
-          <input class="popup__input" type="text"  name="name" id="name"/>
-          <input class="popup__input" type="text"  name="hobby" id="hobby"/>
+          <input class="popup__input" type="text" name="name" id="name" />
+          <input class="popup__input" type="text" name="hobby" id="hobby" />
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
         <button type="button" class="popup__close"></button>
@@ -54,8 +54,18 @@
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
         <form name="add_card">
-          <input class="popup__input" type="text" placeholder="Название" id="place"/>
-          <input class="popup__input" type="text" placeholder="Ссылка на картинку" id="link"/>
+          <input
+            class="popup__input"
+            type="text"
+            placeholder="Название"
+            id="place"
+          />
+          <input
+            class="popup__input"
+            type="text"
+            placeholder="Ссылка на картинку"
+            id="link"
+          />
           <button class="popup__submit" type="submit">Создать</button>
         </form>
         <button type="button" class="popup__close"></button>
@@ -63,7 +73,7 @@
     </div>
     <div class="popup" id="open_img">
       <div class="popup__contain-img">
-        <img class="popup__place">
+        <img class="popup__place" />
         <p class="popup__text"></p>
         <button type="button" class="popup__close"></button>
       </div>

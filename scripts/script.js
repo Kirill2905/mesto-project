@@ -59,29 +59,23 @@ function cardAdd(element) {
       evt.target.classList.toggle("element__like_active");
     });
 
-    const OpenImage = document.querySelector("#open_img");
-    const elementImage = cardTemplate.querySelector(".element__image");
-    elementImage.addEventListener("click", function (evt) {
-      document.querySelector(".popup__place").src = evt.target.currentSrc;
-      document.querySelector(".popup__place").alt = evt.target.alt;
-      document.querySelector(".popup__text").textContent = evt.target.alt;
-      openPopup(OpenImage);
-    });
-
+  const OpenImage = document.querySelector("#open_img");
+  const elementImage = cardTemplate.querySelector(".element__image");
+  elementImage.addEventListener("click", function (evt) {
+    document.querySelector(".popup__place").src = evt.target.currentSrc;
+    document.querySelector(".popup__place").alt = evt.target.alt;
+    document.querySelector(".popup__text").textContent = evt.target.alt;
+    openPopup(OpenImage);
+  });
 
   OpenImage.addEventListener("click", function () {
     closePopup(OpenImage);
-
-    const DeleteButton = cardTemplate.querySelector(".element__delete");
-    DeleteButton.addEventListener("click", function (evt) {
-    evt.target.parentElement.remove();
-
-});
   });
 
-
-
-
+  const DeleteButton = cardTemplate.querySelector(".element__delete");
+  DeleteButton.addEventListener("click", function (evt) {
+    evt.target.parentElement.remove();
+  });
   return cardTemplate;
 }
 const cardContainer = document.querySelector(".elements");
@@ -140,28 +134,3 @@ addButton.addEventListener("click", function () {
 popupClosed.addEventListener("click", function () {
   closePopup(popupAdd);
 });
-
-
-// const DeleteButton = document.querySelectorAll(".element__delete");
-// DeleteButton.forEach(function(Item) {
-//   Item.addEventListener("click", function (evt) {
-//     evt.target.parentElement.remove();
-//   });
-// });
-
-
-// const OpenImage = document.querySelector("#open_img");
-// const element = document.querySelectorAll(".element__image");
-
-// element.forEach(function(Item) {
-//   Item.addEventListener("click", function (evt) {
-//     document.querySelector(".popup__place").src = evt.target.currentSrc;
-//     document.querySelector(".popup__place").alt = evt.target.alt;
-//     document.querySelector(".popup__text").textContent = evt.target.alt;
-//     openPopup(OpenImage);
-//   });
-// });
-
-// OpenImage.addEventListener("click", function () {
-//   closePopup(OpenImage);
-// });
