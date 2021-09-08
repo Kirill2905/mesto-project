@@ -95,21 +95,21 @@ function cardAdd(element) {
       evt.target.classList.toggle("element__like_active");
     });
 
-  const OpenImage = document.querySelector("#open_img");
+  const openImage = document.querySelector("#open_img");
   const elementImage = cardTemplate.querySelector(".element__image");
   elementImage.addEventListener("click", function (evt) {
     document.querySelector(".popup__place").src = evt.target.currentSrc;
     document.querySelector(".popup__place").alt = evt.target.alt;
     document.querySelector(".popup__text").textContent = evt.target.alt;
-    openPopup(OpenImage);
+    openPopup(openImage);
   });
 
-  OpenImage.addEventListener("click", function () {
-    closePopup(OpenImage);
+  openImage.addEventListener("click", function () {
+    closePopup(openImage);
   });
 
-  const DeleteButton = cardTemplate.querySelector(".element__delete");
-  DeleteButton.addEventListener("click", function (evt) {
+  const deleteButton = cardTemplate.querySelector(".element__delete");
+  deleteButton.addEventListener("click", function (evt) {
     evt.target.parentElement.remove();
   });
   return cardTemplate;
