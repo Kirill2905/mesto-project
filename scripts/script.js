@@ -13,7 +13,7 @@ const formElementAddCard = document.querySelector("#add_card");
 const placeInput = document.querySelector("#place");
 const linkInput = document.querySelector("#link");
 
-formElementAddCard.addEventListener("submit", formSubmitAdd);
+formElementAddCard.addEventListener("submit", AddformSubmit);
 
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
@@ -48,11 +48,11 @@ function formSubmitHandler(evt) {
 }
 formElement.addEventListener("submit", formSubmitHandler);
 
-function nameInPopup() {
+function EnterNameInPopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profilehobby.textContent;
 }
-nameInPopup();
+EnterNameInPopup();
 
 const initialCards = [
   {
@@ -122,7 +122,7 @@ function renderCard(element) {
 
 initialCards.forEach(renderCard);
 
-function formSubmitAdd(evt) {
+function AddformSubmit(evt) {
   evt.preventDefault();
   const newCards = {
     name: placeInput.value,
