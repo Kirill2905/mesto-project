@@ -81,7 +81,7 @@ const initialCards = [
   },
 ];
 
-function cardAdd(element) {
+function AddCard(element) {
   const cardTemplate = document
     .querySelector("#card")
     .content.firstElementChild.cloneNode(true);
@@ -116,11 +116,11 @@ function cardAdd(element) {
 }
 const cardContainer = document.querySelector(".elements");
 
-function card(element) {
-  cardContainer.prepend(cardAdd(element));
+function renderCard(element) {
+  cardContainer.prepend(AddCard(element));
 }
 
-initialCards.forEach(card);
+initialCards.forEach(renderCard);
 
 function formSubmitAdd(evt) {
   evt.preventDefault();
@@ -128,7 +128,7 @@ function formSubmitAdd(evt) {
     name: placeInput.value,
     link: linkInput.value,
   };
-  card(newCards);
+  renderCard(newCards);
   closePopup(popupAdd);
 }
 
