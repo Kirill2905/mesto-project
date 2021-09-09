@@ -40,13 +40,13 @@ popupClosed.addEventListener("click", function () {
 });
 
 
-function formSubmitHandler(evt) {
+function submitFormHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profilehobby.textContent = jobInput.value;
   closePopup(popup);
 }
-formElement.addEventListener("submit", formSubmitHandler);
+formElement.addEventListener("submit", submitFormHandler);
 
 function EnterNameInPopup() {
   nameInput.value = profileName.textContent;
