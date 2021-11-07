@@ -15,7 +15,8 @@
 * Трансформации
 * Адаптивность
 * JavaScript
+* Использование библиотеки NPM
+* Минификация CSS файлов
+* Сборка Webpack
+* Транспиляция JS: Babel
 
-**GitPages**
-
-* [Сcылка на GitPages](https://skirill-develop.github.io/mesto-project/).

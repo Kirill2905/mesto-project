@@ -1,0 +1,45 @@
+/* vendor */
+@import url(../styles/vendor/normalize.css);
+@import url(../styles/vendor/fonts/fonts.css);
+/* body */
+@import url(../styles/blocks/body/body.css);
+/* header */
+@import url(../styles/blocks/header/header.css);
+/* logo */
+@import url(../styles/blocks/logo/logo.css);
+/* profile */
+@import url(../styles/blocks/profile/profile.css);
+@import url(../styles/blocks/profile/__avatar/profile__avatar.css);
+@import url(../styles/blocks/profile/__info/profile__info.css);
+@import url(../styles/blocks/profile/__name/profile__name.css);
+@import url(../styles/blocks/profile/__hobby/profile__hobby.css);
+@import url(../styles/blocks/profile/__content/profile__content.css);
+@import url(../styles/blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../styles/blocks/profile/__add-button/profile__add-button.css);
+/* elements */
+@import url(../styles/blocks/elements/elements.css);
+/* element */
+@import url(../styles/blocks/element/element.css);
+@import url(../styles/blocks/element/__image/element__image.css);
+@import url(../styles/blocks/element/__content/element__content.css);
+@import url(../styles/blocks/element/__place/element__place.css);
+@import url(../styles/blocks/element/__like/element__like.css);
+@import url(../styles/blocks/element/__like/_active/element__like_active.css);
+@import url(../styles/blocks/element/__delete/element__delete.css);
+/* footer */
+@import url(../styles/blocks/footer/footer.css);
+@import url(../styles/blocks/footer/__text/footer__text.css);
+/* popup */
+@import url(../styles/blocks/popup/popup.css);
+@import url(../styles/blocks/popup/__container/popup__container.css);
+@import url(../styles/blocks/popup/__title/popup__title.css);
+@import url(../styles/blocks/popup/__input/popup__input.css);
+@import url(../styles/blocks/popup/__input-error/popup__input-error.css);
+@import url(../styles/blocks/popup/__input/_error/popup__input_error.css);
+@import url(../styles/blocks/popup/__submit/popup__submit.css);
+@import url(../styles/blocks/popup/__close/popup__close.css);
+@import url(../styles/blocks/popup/_opened/popup_opened.css);
+@import url(../styles/blocks/popup/__place/popup__place.css);
+@import url(../styles/blocks/popup/__contain-img/popup__contain-img.css);
+@import url(../styles/blocks/popup/__text/popup__text.css);
+
