@@ -1,27 +1,33 @@
 import './index.css';
-import {initialCards, popup, popupClose, editButton, popupAdd, popupClosed, addButton} from '../components/constants';
+import {initialCards, popup, popups, editButton, popupAdd, addButton, sumbitCardButton} from '../components/constants';
 import {enableValidation} from '../components/validate';
-import {openPopup, closePopup, formSubmitHandler} from '../components/modal';
-import {card} from '../components/cards';
+import {openPopup, closePopup, submitProfileForm, insertProfileData} from '../components/modal';
+import {prependCard} from '../components/cards';
 
 enableValidation();
 
-popup.addEventListener("submit", formSubmitHandler);
+popup.addEventListener("submit", submitProfileForm);
 
 editButton.addEventListener("click", function () {
+  insertProfileData();
   openPopup(popup);
-});
-
-popupClose.addEventListener("click", function () {
-  closePopup(popup);
 });
 
 addButton.addEventListener("click", function () {
   openPopup(popupAdd);
+  sumbitCardButton.disabled = true;
 });
 
-popupClosed.addEventListener("click", function () {
-  closePopup(popupAdd);
-});
+popups.forEach((popup) => {
+    popup.addEventListener('click', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__close')) {
+          closePopup(popup)
+        }
+    })
+})
 
-initialCards.forEach(card);
+
+initialCards.forEach(prependCard);

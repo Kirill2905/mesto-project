@@ -33,6 +33,7 @@ export const config = {
 }
 
 export const popup = document.querySelector(".popup");
+export const popups = document.querySelectorAll(".popup");
 export const profileName = document.querySelector(".profile__name");
 export const profilehobby = document.querySelector(".profile__hobby");
 export const nameInput = document.querySelector("#name");
@@ -41,8 +42,10 @@ export const popupClose = popup.querySelector(".popup__close");
 export const editButton = document.querySelector(".profile__edit-button");
 
 export const popupAdd = document.querySelector("#add_card");
-export const popupClosed = popupAdd.querySelector(".popup__close");
 export const addButton = document.querySelector(".profile__add-button");
+export const inputPlace = popupAdd.querySelector("#place");
+export const inputLink = popupAdd.querySelector("#link");
+export const sumbitCardButton = popupAdd.querySelector(config.buttonSelector);
 
 export const cardContainer = document.querySelector(".elements");
 export const placeInput = document.querySelector("#place");

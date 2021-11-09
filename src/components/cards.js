@@ -1,54 +1,57 @@
-import {initialCards, cardContainer, placeInput, linkInput, popupAdd} from '../components/constants';
+import {cardContainer, placeInput, linkInput, popupAdd, inputPlace, inputLink} from '../components/constants';
 import {openPopup, closePopup} from '../components/modal';
 
-const deleteCard = cardTemplate => {
-  const DeleteButton = cardTemplate.querySelector(".element__delete");
-  DeleteButton.addEventListener("click", function (evt) {
+const setDeleteListener = cardTemplate => {
+  const deleteButton = cardTemplate.querySelector(".element__delete");
+  deleteButton.addEventListener("click", function (evt) {
   evt.target.parentElement.remove();
   });
 }
 
-const cardAdd = element => {
+const addCard = element => {
   const cardTemplate = document
     .querySelector("#card")
     .content.firstElementChild.cloneNode(true);
+  const openImage = document.querySelector("#open_img");
+  const elementImage = cardTemplate.querySelector(".element__image");
+  const popupPlace = document.querySelector(".popup__place");
 
   cardTemplate.querySelector(".element__place").textContent = element.name;
-  cardTemplate.querySelector(".element__image").src = element.link;
-  cardTemplate.querySelector(".element__image").alt = element.name;
+  elementImage.src = element.link;
+  elementImage.alt = element.name;
   cardTemplate
     .querySelector(".element__like")
     .addEventListener("click", function (evt) {
       evt.target.classList.toggle("element__like_active");
     });
 
-    const OpenImage = document.querySelector("#open_img");
-    const elementImage = cardTemplate.querySelector(".element__image");
     elementImage.addEventListener("click", function (evt) {
-      document.querySelector(".popup__place").src = evt.target.currentSrc;
-      document.querySelector(".popup__place").alt = evt.target.alt;
+      popupPlace.src = evt.target.currentSrc;
+      popupPlace.alt = evt.target.alt;
       document.querySelector(".popup__text").textContent = evt.target.alt;
-      openPopup(OpenImage);
+      openPopup(openImage);
     });
 
-    deleteCard(cardTemplate);
+    setDeleteListener(cardTemplate);
 
   return cardTemplate;
 }
 
-export const card = element => {
-  cardContainer.prepend(cardAdd(element));
+export const prependCard = element => {
+  cardContainer.prepend(addCard(element));
 }
 
-function formSubmitAdd(evt) {
+function submitAddForm(evt) {
   evt.preventDefault();
   const newCards = {
     name: placeInput.value,
     link: linkInput.value,
   };
-  initialCards.unshift(newCards);
-  card(newCards);
+  prependCard(newCards);
   closePopup(popupAdd);
+  inputPlace.value = '';
+  inputLink.value = '';
+  toggleButtonState(submitButton, inputList);
 }
 
-popupAdd.addEventListener("submit", formSubmitAdd);
+popupAdd.addEventListener("submit", submitAddForm);
