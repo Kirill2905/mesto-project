@@ -1,38 +1,36 @@
-import { config } from './constants';
-
-const isFormValid = inputList => {
+const isFormValid = (inputList , config) => {
   return inputList.every(inputElement => inputElement.validity.valid);
 }
 
-const hideInputError = inputElement => {
+const hideInputError = (inputElement, config) => {
   const errorElement = document.querySelector(`#${inputElement.id}-error`);
   errorElement.textContent = '';
   inputElement.classList.remove(config.inputErrorClass);
 };
 
-const showInputError = inputElement => {
+const showInputError = (inputElement, config) => {
   const errorElement = document.querySelector(`#${inputElement.id}-error`);
   errorElement.textContent = inputElement.validationMessage;
   inputElement.classList.add(config.inputErrorClass);
 };
 
-const toggleButtonState = (buttonElement, inputList) => {
-  if(isFormValid(inputList)) {
+const toggleButtonState = (buttonElement, inputList, config) => {
+  if(isFormValid(inputList, config)) {
     buttonElement.disabled = false;
   }else{
     buttonElement.disabled = true;
   }
 }
 
-const checkInputValidity = inputElement => {
+const checkInputValidity = (inputElement, config) => {
   if(inputElement.validity.valid){
-    hideInputError(inputElement);
+    hideInputError(inputElement, config);
   }else{
-    showInputError(inputElement);
+    showInputError(inputElement, config);
   }
 };
 
-const setEventListeners = formElement => {
+const setEventListeners = (formElement, config)=> {
   formElement.addEventListener('submit', e => {
     e.preventDefault();
   });
@@ -40,16 +38,16 @@ const setEventListeners = formElement => {
   const submitButton = formElement.querySelector(config.buttonSelector);
   inputList.forEach(inputElement => {
     inputElement.addEventListener('input', () => {
-      checkInputValidity(inputElement);
-      toggleButtonState(submitButton, inputList);
+      checkInputValidity(inputElement, config);
+      toggleButtonState(submitButton, inputList, config);
     });
-    toggleButtonState(submitButton, inputList);
+    toggleButtonState(submitButton, inputList, config);
   });
 }
 
-export const enableValidation = () => {
+export const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach(formElement => {
-    setEventListeners(formElement);
+    setEventListeners(formElement, config);
   });
 };
