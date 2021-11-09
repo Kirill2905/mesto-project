@@ -4,8 +4,6 @@ import {enableValidation} from '../components/validate';
 import {openPopup, closePopup, submitProfileForm, insertProfileData} from '../components/modal';
 import {prependCard} from '../components/cards';
 
-enableValidation();
-
 popup.addEventListener("submit", submitProfileForm);
 
 editButton.addEventListener("click", function () {
@@ -29,5 +27,11 @@ popups.forEach((popup) => {
     })
 })
 
-
 initialCards.forEach(prependCard);
+
+enableValidation({
+  formSelector: '.form',
+  inputSelector: '.popup__input',
+  buttonSelector: '.popup__submit',
+  inputErrorClass: 'popup__input_error',
+});

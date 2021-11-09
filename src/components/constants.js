@@ -25,13 +25,6 @@ export const initialCards = [
   },
 ];
 
-export const config = {
-  formSelector: '.form',
-  inputSelector: '.popup__input',
-  buttonSelector: '.popup__submit',
-  inputErrorClass: 'popup__input_error',
-}
-
 export const popup = document.querySelector(".popup");
 export const popups = document.querySelectorAll(".popup");
 export const profileName = document.querySelector(".profile__name");
@@ -45,7 +38,7 @@ export const popupAdd = document.querySelector("#add_card");
 export const addButton = document.querySelector(".profile__add-button");
 export const inputPlace = popupAdd.querySelector("#place");
 export const inputLink = popupAdd.querySelector("#link");
-export const sumbitCardButton = popupAdd.querySelector(config.buttonSelector);
+export const sumbitCardButton = popupAdd.querySelector(".popup__submit");
 
 export const cardContainer = document.querySelector(".elements");
 export const placeInput = document.querySelector("#place");
