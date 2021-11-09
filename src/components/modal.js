@@ -25,13 +25,12 @@ export const closePopup = (popupElement) => {
   popupElement.removeEventListener('click', closeClick);
 }
 
-function nameInPopup() {
+export const insertProfileData = () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profilehobby.textContent;
 }
-nameInPopup();
 
-export const formSubmitHandler = evt => {
+export const submitProfileForm = evt => {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profilehobby.textContent = jobInput.value;
