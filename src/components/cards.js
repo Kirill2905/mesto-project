@@ -51,7 +51,6 @@ function submitAddForm(evt) {
   closePopup(popupAdd);
   inputPlace.value = '';
   inputLink.value = '';
-  toggleButtonState(submitButton, inputList);
 }
 
 popupAdd.addEventListener("submit", submitAddForm);
