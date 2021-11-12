@@ -6,6 +6,7 @@ import {
   inputPlace,
   inputLink,
   sumbitCardButton,
+  openImage,
 } from "../components/constants";
 import { openPopup, closePopup } from "../components/modal";
 import { addNewCard, deleteCard, addLike, deleteLike } from "../components/api";
@@ -15,8 +16,9 @@ const setDeleteListener = (cardTemplate, element) => {
   const deleteButton = cardTemplate.querySelector(".element__delete");
   if (userId === element.owner._id) {
     deleteButton.addEventListener("click", function (evt) {
-      deleteCard(element._id);
-      evt.target.parentElement.remove();
+      deleteCard(element._id)
+      .then(res => evt.target.parentElement.remove())
+      .catch((err) => {console.log(err)});
     });
   } else {
     deleteButton.remove();
@@ -27,7 +29,6 @@ const addCard = (element) => {
   const cardTemplate = document
     .querySelector("#card")
     .content.firstElementChild.cloneNode(true);
-  const openImage = document.querySelector("#open_img");
   const elementImage = cardTemplate.querySelector(".element__image");
   const popupPlace = document.querySelector(".popup__place");
   const countLikes = cardTemplate.querySelector(".element__likes_count");
@@ -91,14 +92,14 @@ function submitAddForm(evt) {
   addNewCard(newCards)
     .then((res) => {
       prependCard(res);
-      savingText(false, sumbitCardButton);
       inputPlace.value = "";
       inputLink.value = "";
       closePopup(popupAdd);
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => savingText(false, sumbitCardButton))
 }
 
 popupAdd.addEventListener("submit", submitAddForm);
