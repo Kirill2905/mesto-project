@@ -7,10 +7,11 @@ import {
   inputLink,
   sumbitCardButton,
   openImage,
+  userId,
 } from "../components/constants";
 import { openPopup, closePopup } from "../components/modal";
 import { addNewCard, deleteCard, addLike, deleteLike } from "../components/api";
-import { userId, savingText } from "../components/utils";
+import { savingText } from "../components/utils";
 
 const setDeleteListener = (cardTemplate, element) => {
   const deleteButton = cardTemplate.querySelector(".element__delete");

@@ -24,3 +24,4 @@ export const cardContainer = document.querySelector(".elements");
 export const placeInput = document.querySelector("#place");
 export const linkInput = document.querySelector("#link");
 export const openImage = document.querySelector("#open_img");
+export const userId = '89919d3f346005fbe5719563';

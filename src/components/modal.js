@@ -10,7 +10,7 @@ import {
   sumbitAvatarButton,
   sumbitProfileButton,
 } from "../components/constants";
-import { editProfile, editAvatar } from "../components/api";
+import { editProfile, editAvatar} from "../components/api";
 import { savingText } from "../components/utils";
 
 const closeEscape = (evt) => {
@@ -55,7 +55,7 @@ export const submitProfileForm = (evt) => {
     .catch((err) => {
       console.log(err);
     })
-    .finally(() => savingText(false, sumbitCardButton))
+    .finally(() => savingText(false, sumbitProfileButton))
 };
 
 export const submitAvatarForm = (evt) => {
@@ -69,5 +69,5 @@ export const submitAvatarForm = (evt) => {
     .catch((err) => {
       console.log(err);
     })
-    .finally(() => savingText(false, sumbitCardButton))
+    .finally(() => savingText(false, sumbitAvatarButton))
 };

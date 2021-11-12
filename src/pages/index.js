@@ -9,6 +9,9 @@ import {
   avatarEditButton,
   popupEditAvatar,
   sumbitAvatarButton,
+  profileName,
+  profilehobby,
+  profileAvatar,
 } from "../components/constants";
 import { enableValidation } from "../components/validate";
 import {
@@ -19,8 +22,7 @@ import {
   submitAvatarForm,
 } from "../components/modal";
 import { prependCard } from "../components/cards";
-import { loadingProfile } from "../components/utils";
-import { getInitialCards } from "../components/api";
+import { getInitialCards, getInitialUser } from "../components/api";
 
 editProfilePopup.addEventListener("submit", submitProfileForm);
 
@@ -59,9 +61,12 @@ enableValidation({
   inputErrorClass: "popup__input_error",
 });
 
-Promise.all([getInitialCards(), loadingProfile()])
-  .then((data) => {
-    data[0].forEach(prependCard)
-    loadingProfile(data[1])
+Promise.all([getInitialCards(), getInitialUser()])
+  .then(([cards, userData]) => {
+      profileName.textContent = userData.name;
+      profilehobby.textContent = userData.about;
+      profileAvatar.src = userData.avatar;
+    cards.forEach(prependCard)
+
   })
   .catch((err) => {console.log(err);});
