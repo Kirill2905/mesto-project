@@ -1,5 +1,5 @@
 import {
-  popup,
+  editProfilePopup,
   profileName,
   profilehobby,
   nameInput,
@@ -50,12 +50,12 @@ export const submitProfileForm = (evt) => {
     .then((res) => {
       profileName.textContent = res.name;
       profilehobby.textContent = res.about;
-      savingText(false, sumbitProfileButton);
-      closePopup(popup);
+      closePopup(editProfilePopup);
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => savingText(false, sumbitCardButton))
 };
 
 export const submitAvatarForm = (evt) => {
@@ -64,10 +64,10 @@ export const submitAvatarForm = (evt) => {
   editAvatar(inputSaveAvatar.value)
     .then((res) => {
       profileAvatar.src = res.avatar;
-      savingText(false, sumbitAvatarButton);
       closePopup(popupEditAvatar);
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => savingText(false, sumbitCardButton))
 };

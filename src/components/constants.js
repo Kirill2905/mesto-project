@@ -1,4 +1,3 @@
-export const popup = document.querySelector(".popup");
 export const popups = document.querySelectorAll(".popup");
 export const profileName = document.querySelector(".profile__name");
 export const profilehobby = document.querySelector(".profile__hobby");
@@ -11,7 +10,6 @@ export const sumbitAvatarButton = popupEditAvatar.querySelector(".popup__submit"
 
 export const nameInput = document.querySelector("#name");
 export const jobInput = document.querySelector("#hobby");
-export const popupClose = popup.querySelector(".popup__close");
 export const editButton = document.querySelector(".profile__edit-button");
 export const editProfilePopup = document.querySelector("#edit_profile-popup");
 export const sumbitProfileButton = editProfilePopup.querySelector(".popup__submit");
@@ -25,3 +23,4 @@ export const sumbitCardButton = popupAdd.querySelector(".popup__submit");
 export const cardContainer = document.querySelector(".elements");
 export const placeInput = document.querySelector("#place");
 export const linkInput = document.querySelector("#link");
+export const openImage = document.querySelector("#open_img");

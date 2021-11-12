@@ -1,6 +1,6 @@
 import "./index.css";
 import {
-  popup,
+  editProfilePopup,
   popups,
   editButton,
   popupAdd,
@@ -22,13 +22,13 @@ import { prependCard } from "../components/cards";
 import { loadingProfile } from "../components/utils";
 import { getInitialCards } from "../components/api";
 
-popup.addEventListener("submit", submitProfileForm);
+editProfilePopup.addEventListener("submit", submitProfileForm);
 
 popupEditAvatar.addEventListener("submit", submitAvatarForm);
 
 editButton.addEventListener("click", function () {
   insertProfileData();
-  openPopup(popup);
+  openPopup(editProfilePopup);
 });
 
 addButton.addEventListener("click", function () {
@@ -59,10 +59,9 @@ enableValidation({
   inputErrorClass: "popup__input_error",
 });
 
-getInitialCards()
-  .then((res) => res.forEach(prependCard))
-  .catch((err) => {
-    console.log(err);
-  });
-
-loadingProfile();
+Promise.all([getInitialCards(), loadingProfile()])
+  .then((data) => {
+    data[0].forEach(prependCard)
+    loadingProfile(data[1])
+  })
+  .catch((err) => {console.log(err);});
