@@ -1,38 +1,73 @@
-import {popup, profileName, profilehobby, nameInput, jobInput} from '../components/constants';
+import {
+  popup,
+  profileName,
+  profilehobby,
+  nameInput,
+  jobInput,
+  inputSaveAvatar,
+  popupEditAvatar,
+  profileAvatar,
+  sumbitAvatarButton,
+  sumbitProfileButton,
+} from "../components/constants";
+import { editProfile, editAvatar } from "../components/api";
+import { savingText } from "../components/utils";
 
 const closeEscape = (evt) => {
   if (evt.key === "Escape") {
-    const popup = document.querySelector(".popup_opened")
+    const popup = document.querySelector(".popup_opened");
     closePopup(popup);
   }
-}
+};
 
 const closeClick = (evt) => {
-  if (evt.target.classList.contains('popup')) {
+  if (evt.target.classList.contains("popup")) {
     closePopup(evt.target);
   }
-}
+};
 
 export const openPopup = (popupElement) => {
   popupElement.classList.add("popup_opened");
-  document.addEventListener('keydown', closeEscape)
-  popupElement.addEventListener('click', closeClick);
-}
+  document.addEventListener("keydown", closeEscape);
+  popupElement.addEventListener("click", closeClick);
+};
 
 export const closePopup = (popupElement) => {
   popupElement.classList.remove("popup_opened");
-  document.removeEventListener('keydown', closeEscape);
-  popupElement.removeEventListener('click', closeClick);
-}
+  document.removeEventListener("keydown", closeEscape);
+  popupElement.removeEventListener("click", closeClick);
+};
 
 export const insertProfileData = () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profilehobby.textContent;
-}
+};
 
-export const submitProfileForm = evt => {
+export const submitProfileForm = (evt) => {
   evt.preventDefault();
-  profileName.textContent = nameInput.value;
-  profilehobby.textContent = jobInput.value;
-  closePopup(popup);
-}
+  savingText(true, sumbitProfileButton);
+  editProfile(nameInput.value, jobInput.value)
+    .then((res) => {
+      profileName.textContent = res.name;
+      profilehobby.textContent = res.about;
+      savingText(false, sumbitProfileButton);
+      closePopup(popup);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const submitAvatarForm = (evt) => {
+  evt.preventDefault();
+  savingText(true, sumbitAvatarButton);
+  editAvatar(inputSaveAvatar.value)
+    .then((res) => {
+      profileAvatar.src = res.avatar;
+      savingText(false, sumbitAvatarButton);
+      closePopup(popupEditAvatar);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
